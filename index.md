@@ -3,7 +3,9 @@ layout: home
 title: Agent Suite Builder
 ---
 
-_For vibe coders and developers building AI agents. Your coding assistant plans, builds, tests, runs, documents, debugs and audits agent systems with you, from a Slack/Gmail/Jira digest to an insurance-claims suite. Nothing sends, pays or goes live without a named person's yes._
+![Agent Suite Builder: describe the agent system; your assistant plans, builds, tests and runs it](assets/cover.png)
+
+_For vibe coders and developers building AI agents. Your coding assistant plans, builds, stress-tests, runs, documents, debugs and audits agent systems with you, from a Slack/Gmail/Jira digest to an insurance-claims suite. Nothing sends, pays or goes live without a named person's yes._
 
 **Who it's for.** Anyone building AI agents with Claude Code, Cursor, Codex CLI or another assistant that loads `SKILL.md` files — **vibe coders** who describe what they want and let the assistant do the coding, **developers**, or both together.
 
@@ -21,16 +23,17 @@ You get `blueprint.md`: a 12-part plan you can read and argue with — the goal,
 
 **Or give it something hard.** The pack's flagship example is a homeowners insurance claims suite in Texas: four agents take a claim e-mail through coverage, deductible and fraud-indicator checks to an adjuster packet, citing the claim-handling rules they researched. Payments and letters stay dry-runs until a named adjuster approves. It ships with the code, a planted bug and the Debug record that found it, and an Audit.
 
-**The eight jobs**
+**The nine jobs**
 
 1. **Start** (`using-agent-systems`) — picks the right job for your request and loads only that skill.
 2. **Scope** (`scope-to-suite`) — turns a one-line request into `blueprint.md`.
 3. **Implement** (`implement-agent-from-blueprint`) — writes code for one framework (for example LangGraph), one module per agent, plus a test that checks the output.
-4. **Run** (`run-agent-suite`) — takes the tested suite live: picks where it runs, connects your accounts one at a time (read-only first, passwords never in chat), runs a dry-run trial week with alerts on, goes live only on a named yes with a one-command roll-back, and writes `RUNBOOK.md`.
-5. **Document** (`document-agent-suite`) — writes the technical documentation for what it built, checked against the code: an architecture page, a card per agent (what it does, what it may touch, what it must never do), tools and permissions, operations with every alert and the roll-back, decision records, and a plain user guide.
-6. **Debug** (`debug-failing-agent`) — takes one failing run, finds the first step that went wrong, fixes that step and adds a test so it stays fixed.
-7. **Audit** (`audit-existing-agent-system`) — checks an existing agent system for risky gaps (an agent that can send without a person approving it, a read-only agent holding write access) and writes a ranked report with evidence.
-8. **Raise** (`raise-existing-agent`) — scores an existing agent, whose files you can read, on a 14-row checklist and writes an upgrade plan. Report only: it does not change your code.
+4. **Verify** (`verify-agent-suite`) — runs by itself after Implement: several independent testers try to break the suite at once (they follow the README from scratch, deliberately break every safety rule to prove a test catches it, attack the inputs and approvals, check the docs against the code, and walk it as you would). It fixes what they confirm, adds a test for each fix, and tests again. It also runs a **model council**: by default, reviewers on different models inside your own assistant, at no extra cost. If you ask, it adds other AI providers on your own keys, redacted, with a dry run and a cost cap first, and acts on nothing until it is reproduced. Nothing goes live without a Verify pass.
+5. **Run** (`run-agent-suite`) — takes the tested suite live: picks where it runs, connects your accounts one at a time (read-only first, passwords never in chat), runs a dry-run trial week with alerts on, goes live only on a named yes with a one-command roll-back, and writes `RUNBOOK.md`.
+6. **Document** (`document-agent-suite`) — writes the technical documentation for what it built, checked against the code: an architecture page, a card per agent (what it does, what it may touch, what it must never do), tools and permissions, operations with every alert and the roll-back, decision records, and a plain user guide.
+7. **Debug** (`debug-failing-agent`) — takes one failing run, finds the first step that went wrong, fixes that step and adds a test so it stays fixed.
+8. **Audit** (`audit-existing-agent-system`) — checks an existing agent system for risky gaps (an agent that can send without a person approving it, a read-only agent holding write access) and writes a ranked report with evidence.
+9. **Raise** (`raise-existing-agent`) — scores an existing agent, whose files you can read, on a 14-row checklist and writes an upgrade plan. Report only: it does not change your code.
 
 A one-agent prototype can skip the full plan and use the Quickstart (`shared/docs/QUICKSTART.md`).
 
@@ -40,7 +43,7 @@ A one-agent prototype can skip the full plan and use the Quickstart (`shared/doc
 
 **What's in the pack**
 
-- 42 skills: the eight jobs above plus helpers (choosing an agent type, writing new agents, skills, commands, hooks and rules, porting to n8n or OpenClaw, choosing a model, estimating cost, onboarding a client). A job opens only the files it needs.
+- 43 skills: the nine jobs above plus helpers (choosing an agent type, writing new agents, skills, commands, hooks and rules, porting to n8n or OpenClaw, choosing a model, estimating cost, onboarding a client). A job opens only the files it needs.
 - A reference library the skills open when they need it: a pattern catalogue, agent and command templates, known failure patterns, QA and security checklists, and notes per LLM provider and framework.
 - Four worked examples, each with the exact prompt for every job, runnable Python code with tests (standard library only) and the files each job wrote:
   - **Insurance claims** — regulated, money moves: Scope → Implement → a planted bug → Debug → Audit → Document, with sourced Texas claim deadlines, three approval roles, live alerts, a payment-blocking hook and a full docs set.
@@ -54,6 +57,6 @@ A one-agent prototype can skip the full plan and use the Quickstart (`shared/doc
 
 ---
 
-**Start here:** [Getting started](getting-started.html) · [The eight jobs](jobs.html) · [Worked examples](examples.html) · [Vibe coding](vibe-coding.html) · [Cards](cards.html) · [FAQ](faq.html)
+**Start here:** [Getting started](getting-started.html) · [The nine jobs](jobs.html) · [Worked examples](examples.html) · [Vibe coding](vibe-coding.html) · [Cards](cards.html) · [FAQ](faq.html)
 
 The pack itself (skills, reference library and examples) is delivered through Agensi. These pages are generated from it.

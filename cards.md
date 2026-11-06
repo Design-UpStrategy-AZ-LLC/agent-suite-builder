@@ -12,11 +12,11 @@ Copy verbatim. Do not rename the rows. Do not add pattern IDs.
 
 | Gate | When | Default | Check |
 |---|---|---|---|
-| **Phase** | Requester signs `blueprint.md` *before* Implement if the suite can Send, Delete, or move money. | Unsigned → do not write code. | `blueprint.md` Status is Approved, or unsigned + no Send |
+| **Phase** | Requester signs `blueprint.md` *before* Implement if the suite can Send, Delete, or move money. | Unsigned → do not write code. | `blueprint.md` Status is Approved, or unsigned and the suite cannot Send, Delete or move money |
 | **Action** | Every Send / Delete / write-to-someone-else is a dry-run until a named human says yes. | No yes → no side effect. | Mutating tool has a dry-run path, or no such tool |
-| **No gate** | Write to the user's own disk (`digest-YYYY-MM-DD.md`, `state/*.md`). | Allowed. | Path is under the user's project |
+| **No gate** | Write to the user's own disk (`digest-YYYY-MM-DD.md`, `state/*.md`). Drafts in the owner's own mailbox or drive are a write to their account: allowed after go-live approves the write scope. Sending a draft is the owner's own action. | Allowed. | Path is under the user's project, or a draft in the owner's account with an approved write scope |
 | **No answer** | Timeout, skip, or "looks fine." | **Deny.** | No yes-token in the run log |
-| **Who** | A named role (requester, on-call, counsel). Not "the user." | Blank name → deny. | Who is a role string, not `the user`, not blank |
+| **Who** | A named role (requester, on-call, counsel). Not "the user." | No role, or a blank, generic or AI name → deny. | Who is a role and a named person (`counsel: <name>`); not `the user`, not generic (`team`, `admin`), not an AI, not blank |
 
 A skipped action gate is a **named failure** (Debug) and **Critical** (Audit).
 
@@ -62,12 +62,36 @@ Alert on what a person must act on, not on every error. A blocker is code (a wra
 |---|---|---|
 | What | Alert on: a refused tool call, an approval refused or reused, an attempt to bypass a gate, the same run partial N times in a row, a legal or SLA deadline at risk, cost or volume over budget, drift from the trial-run numbers. | Each alert names its trigger and a numeric threshold |
 | Who | Route each alert to a named role (on-call, the approver's lead, compliance). Not "the team". | Route is a role string, not blank |
-| Severity | SEV-1 money moved or data leaked; SEV-2 a gate was attempted or a tool refused; SEV-3 degraded (partial runs, deadline at risk); SEV-4 information. Severity decides who is paged. | Each alert carries SEV-1 to SEV-4 |
+| Severity | SEV-1 money moved or data leaked; SEV-2 a gate was attempted or a tool refused; SEV-3 degraded (partial runs, deadline at risk); SEV-4 information. Severity decides who is paged. An approver who deliberately skips or denies is SEV-4 information, not a bypass. | Each alert carries SEV-1 to SEV-4 |
 | Dedupe | One alert per key per window; a repeat raises the count, not a new alert. | Alert key and window are stated |
-| Sink | Write the alert record locally first (a file or the log). Paging, chat or webhook delivery is a Send: use an existing alerting tool (Sentry, PagerDuty, the host's on-call) and keep the agent out of the send path. | A local record exists; no agent holds a paging tool |
+| Sink | Write the alert record locally first (a file or the log). Paging, chat or webhook delivery is a Send: use an existing alerting tool (Sentry, PagerDuty, the host's on-call) and keep the agent out of the send path. A small team with no on-call tool may use the owner's own email or phone notification through a channel they already use; the agent still never sends its own pages. | A local record exists; no agent holds a paging tool |
 | Hook | Put each blocker in a tool wrapper or a `PreToolUse` hook that exits 2 on a mutating call with no approval record. Fail closed on malformed input. | The block path is code with a test |
 | Runbook | Every SEV-1 or SEV-2 alert names its first action (`incident-response-for-agent`: contain first). | Alert text names the first action |
 | Quiet | An alert nobody acted on for two weeks gets a new threshold or is deleted. | A review date is set |
+
+Every daily job uses this card. Each skill says where.
+
+## Quality card
+
+Code, prompts, tests and evals, review, release. Go-live waits until every row passes or is `NA` with a reason. A row that fails or was not run keeps its step in dry-run; nothing goes live while any row fails or was not run; the dry-run trial may continue meanwhile. A rule that a prompt states and the code does not enforce is a Fail. Full standard, prompt-file template and sources: `../../schemas/quality-standards.md`.
+
+| Rule | Do | Check |
+|---|---|---|
+| Types | Type every public function's parameters and return value. Money and dates carry their unit (integer cents, `date`). | Type checker clean, or an annotation test passes |
+| Static checks | Run the project's linter and type checker when they are installed (`ruff check`, `mypy --strict` or `pyright`). None installed: `python3 -m compileall -q src` plus the full test suite. | Each command and its exit code recorded; non-zero blocks |
+| Tool boundary | Each tool wrapper checks its input and the payload shape, and turns every failure into a named status (`denied`, `error`, `partial`). No bare `except`, no swallowed error. | Each wrapper has a failure-path test |
+| Dependencies | Pin exact versions (`==` or a lock file). Stdlib only is written as `dependencies = []`. | Every dependency pinned, or the list is empty |
+| Secrets | No secret in code, prompts, fixtures, logs or git. Variable names go in `.env.example`, values in the secret store. | Secret grep finds none; `.env` is git-ignored |
+| No dead code | No unused module, function, flag or commented-out block. A docstring never describes a path the code lacks: write `not built`. | Every module is imported or run; every described path exists or says `not built` |
+| One module per agent | One module per blueprint agent, named after it. | Module count = blueprint agent count |
+| Prompt file | Each LLM step has a versioned prompt file: id, version, model, owner; role, scope, tools allowed, never, untrusted input, output schema, stop or refuse, at least one worked example, eval set path, pass bar. | A test finds every field and section; a deterministic step says `no model call` |
+| Prompt matches code | Each tool the prompt allows is on that agent's allowlist. Each "never" names the code or hook that blocks it. The output schema matches the validator field for field. | Test: allowed tools ⊆ allowlist; schema fields = record fields |
+| Tests | Golden path, one test per edge fixture, one regression test per fixed bug. Show each new test failing on the unfixed code in the debug record or PR. | Tests ≥ fixtures + debug records; each new test's failing run is in the debug record or PR |
+| Evals | For each LLM step: an eval set from `prepare-eval-set` with a numeric pass bar; run every case k ≥ 3 times; report pass^1 and pass^k. | Result line `pass^k ≥ bar (k = n)`, or `NA — no model call` |
+| Test integrity | A reviewer reads every test the model wrote, looking for gaming: asserting the code's own output back, special-casing a fixture, weakening, skipping or deleting an assertion. | Review note lists each model-written test file |
+| Review | Independent review before go-live: a fresh child agent or a developer who did not write the code. Same-session review is not isolated. Neither available → record `review: not isolated` and do not go live. | Reviewer, date and session recorded, or `review: not isolated` and not live |
+| Verify | Run `verify-agent-suite` on the revision going live: parallel adversarial testers, a fix loop with a regression test per fix, and a re-test. Any later commit, except one that only adds `verify-*.md` or files under `verify/`, makes the PASS stale; `verify-agent-suite` § 7 says when the light wave refreshes it. | `verify-<date>.md` verdict PASS on the revision going live, ignoring commits that only add `verify-*.md` or files under `verify/`; no open Critical or High |
+| Release | Go-live is blocked until the card passes. Record each row's result and evidence in `RUNBOOK.md`. | `RUNBOOK.md` has a dated Quality results table, every row Pass or `NA` |
 
 Every daily job uses this card. Each skill says where.
 
@@ -93,10 +117,10 @@ Use when two decisions, two failures, or two findings collide. Do not invent a n
 | Rule | Do | Check |
 |---|---|---|
 | Name first | Score or name each item on its own. Then compose. | Each item has its own verdict before the Together line |
-| Together | One line per interacting pair: **A then B because…** | Line matches `A then B because`; no fused name |
+| Together line | One line per interacting pair: **A then B because…** | Line matches `A then B because`; no fused name |
 | Same skill | One next step may close two items. | Next step is one job name |
 | Unknown pair | Critical / first-wrong / unsigned-gate before the rest. Do not fuse slices. | Unknown pair lists Critical first or `INCOMPLETE` |
-| Never | A fourth archetype, a new pattern ID, a hybrid template (AP-23), or loading both bodies “to be safe.” | No fourth shape name in the file |
+| Never | A fourth archetype, a new pattern ID, a hybrid template (AP-23 in `shared/schemas/anti-patterns.md`), or loading both bodies “to be safe.” | No fourth shape name in the file |
 
 Job-specific pairs live in that skill (Scope, Implement, Debug, Audit, Raise). Do not copy Raise’s R-ids into the others.
 

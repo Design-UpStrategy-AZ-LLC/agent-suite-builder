@@ -16,6 +16,7 @@ Folder: `shared/examples/insurance-claims/`
 |---|---|
 | 1. Scope — write the blueprint | Build me an agent suite for homeowners claims. A first notice of loss arrives by e-mail with photos. Extract it, check coverage against the policy, work out severity and the deductible, screen for fraud indicators without ever denying, and give the adjuster a packet with a payout recommendation. Payments and claimant letters must wait for a named adjuster. We operate in Texas. |
 | 2. Implement — make it run | Implement `shared/examples/insurance-claims/blueprint.md` in plain Python, stdlib only, with one module per agent, typed tool wrappers, and dry-run payment and letter tools. |
+| 3. A planted failure | see README (`shared/examples/insurance-claims/README.md`) |
 | 4. Debug — name it, find the first wrong step, fix one thing | CLM-2026-0419 recommended $8,000.00 but the roofer, fence and contents lines add up to $18,600.00 with a $6,200.00 deductible. Debug it. |
 | 5. Audit — review the final suite | Audit `shared/examples/insurance-claims/` before we register a live ClaimCenter connector. Is it safe to ship? |
 
@@ -30,7 +31,9 @@ Folder: `shared/examples/customs-filing/`
 | 1. Scope | Use agent-systems. Scope a suite for our freight-forwarding desk. Each US import arrives with a commercial invoice, packing list and bill of lading, plus the buyer's PO. Extract them, check quantities, values, currency and consignee against each other and the PO, suggest HTS codes for our licensed customs broker to confirm, and build the CBP entry summary draft. Nothing goes to ACE until the broker says yes. |
 | 2. Implement | Implement shared/examples/customs-filing/blueprint.md in plain Python, stdlib only. Use fixtures.md for the documents. The submit tool must be a dry-run until the licensed-customs-broker approval is present. |
 | 3. The planted failure | This shipment (B/L AMLU2610190042) passed reconciliation, but the supplier billed 9% over the PO and the draft says USD 12,390. Here is the run output and state/reconciliation.json. Find out why. |
+| 4. Debug | see README (`shared/examples/customs-filing/README.md`) |
 | 5. Audit | Audit shared/examples/customs-filing/ before we connect it to the broker's ABI software. Is it safe to ship? |
+| 6. Verify, Run and Document | Verify shared/examples/customs-filing/ before go-live. Run the testers in parallel, fix what they find, and give me the verdict. |
 
 ## Example — fix an inherited support bot
 
@@ -44,9 +47,19 @@ Folder: `shared/examples/support-bot-raise/`
 | 2. Raise — "make it good, report only" | Raise it to lead standard using the schemas. Report only, don't touch the code. |
 | 3. Debug — "why was this customer refunded twice?" | A customer was refunded twice on 4 November. Here is the run: `inherited/run-2026-11-04.log`. Find what went wrong and add a test. |
 | 4. Implement — "build the first fixes" | The operations manager signed the blueprint in the upgrade plan. Implement this sprint's items 4 to 9 in `fixed/`, plain Python, stdlib only. |
+| 5. Verify, Run and Document | Verify fixed/ before go-live. Run the testers in parallel, fix what they find, and give me the verdict. |
 
 ## Example — daily commitment digest
 
 Copy this whole folder (`task-digest/`) into a customer project when the request is close to:
 
 Folder: `shared/examples/task-digest/`
+
+| Job | What you type |
+|---|---|
+| Request | Connect Slack, Gmail, and Jira. Give me task updates. |
+| Scope | see README (`shared/examples/task-digest/README.md`) |
+| Implement | see README (`shared/examples/task-digest/README.md`) |
+| Debug | see README (`shared/examples/task-digest/README.md`) |
+| Audit | see README (`shared/examples/task-digest/README.md`) |
+| Raise | see README (`shared/examples/task-digest/README.md`) |

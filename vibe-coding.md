@@ -87,7 +87,8 @@ AI handles the routine bulk well; edge cases, security and architecture need jud
 No outside source covered these for non-technical users; this is the pack's own practice.
 
 - **Permissions:** name each in plain words before the user approves it ("read your inbox, not send from it"). Read first; each write permission on its own yes.
-- **Secrets:** the user signs in in the vendor's own window. You never see, echo or store their password. Tokens go in the keychain or the secret store; `.env` stays out of git. Never ask for a secret in chat.
+- **Secrets:** the user signs in in the vendor's own window. You never see, echo or store their password. For a token or API key, you run a command that prompts the user for it in a hidden terminal input (or the vendor CLI's own login) and stores it in the OS keychain or the secret store. Never ask for a secret in chat; never ask them to edit `.env`. `.env` stays out of git.
+- **Approvals:** the user says yes through a channel they already use: drafts they send themselves from their own mailbox, a reply carrying a single-use code, or a local review page (`run-agent-suite` § 5b). Never by editing a file or running a command.
 - **Cost:** say up front which paid services or API keys the suite needs and roughly what a month costs at the expected volume; alert when the budget is crossed (Alert card).
 
 ## 9. `PROGRESS.md` (keep it current)

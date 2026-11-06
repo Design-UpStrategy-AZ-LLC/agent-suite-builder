@@ -20,9 +20,9 @@ Ask once, in plain words: "Will you build this yourself with me, or is a develop
 |---|---|---|
 | **Vibe** | The user describes and decides; you write, run and explain everything | Run every command yourself and say what happened in one plain sentence. Ask only for decisions (one question, your recommendation first) and for actions only they can do (sign in, approve a scope, say yes to go live). Never ask them to edit a file, read a stack trace or paste a secret into chat. Explain any term the first time. Keep `PROGRESS.md` (template in `shared/schemas/vibe-coding-support.md` § 9). |
 | **Developer** | A developer reviews and owns the code | Leave a reviewable diff, a README with exact commands, and tests. Use the developer's framework and conventions. Ask technical questions directly. |
-| **Together** | The user vibe-codes; a developer reviews at the gates | Work as Vibe. At each gate (signed blueprint, go-live, any High or Critical Audit finding) write `handoff.md` for the developer (`run-agent-suite` § 6) and keep going in dry-run while they review. |
+| **Together** | The user vibe-codes; a developer reviews at the gates | Work as Vibe. At each gate (signed blueprint, go-live, any High or Critical Audit finding) write `handoff.md` for the developer (`run-agent-suite` § 6). The signed-blueprint gate waits: no code until the blueprint is signed. At the other gates, keep going in dry-run while they review. |
 
-The gates are the same in every mode: Vibe does not skip the human-gate card, the Research card or the Alert card. It only changes who types and how you explain.
+The gates are the same in every mode: Vibe does not skip the human-gate card, the Research card, the Alert card or the Quality card. It only changes who types and how you explain.
 
 ## 3. How it talks to you
 
