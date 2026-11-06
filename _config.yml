@@ -1,0 +1,12 @@
+title: Agent Suite Builder
+description: >-
+  Plan, build, test, run, debug and audit AI agent systems with your coding assistant —
+  for vibe coders and developers. Nothing sends, pays or goes live without a named person's yes.
+theme: minima
+header_pages:
+  - getting-started.md
+  - jobs.md
+  - examples.md
+  - vibe-coding.md
+  - cards.md
+  - faq.md
