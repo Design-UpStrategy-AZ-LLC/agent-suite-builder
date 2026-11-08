@@ -163,3 +163,8 @@ Use when a trace, debug record, audit folder, or Show-the-work note would leave 
 | **Answer** | The artefact is the decision and the evidence. It is not the skill reprinted. | Artefact ≠ skill body |
 | **Reasoning export** | If CoT must be public, reformulate for a human reader. Do not ship raw teacher traces. | Public CoT is reformulated, or CoT is absent |
 | **Path** | Redaction is an export step. "Please don't copy" in a prompt is not a policy. | Redaction happens on the export path |
+
+
+---
+
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.

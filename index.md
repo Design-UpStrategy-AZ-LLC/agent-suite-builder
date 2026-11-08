@@ -55,10 +55,15 @@ A one-agent prototype can skip the full plan and use the Quickstart (`shared/doc
 
 **What you need.** An AI coding assistant connected to Agensi. For Implement, Python (or your project's language) installed — in vibe mode the assistant sets it up and tells you if anything is missing. A full Scope plan includes online research into what each tool's API really does: allow 1–3 hours for 3–5 connectors.
 
-**Updates and license.** The subscription delivers the pack and every new skill and update. The text is Apache-2.0.
+**Updates and license.** The subscription delivers the pack and every new skill and update. It is licensed per seat: each subscription is a personal license for one person, used through their own agent while the subscription is active. Everyone on a team who uses it needs their own seat. The pack and its documentation are copyrighted by DesignUp Strategy AZ LLC, all rights reserved; they are not open source. What your agent writes in your own project is yours.
 
 ---
 
 **Start here:** [Getting started](getting-started.html) · [The nine jobs](jobs.html) · [Worked examples](examples.html) · [Vibe coding](vibe-coding.html) · [Cards](cards.html) · [FAQ](faq.html)
 
 The pack itself (skills, reference library and examples) is delivered through Agensi. These pages are generated from it.
+
+
+---
+
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.

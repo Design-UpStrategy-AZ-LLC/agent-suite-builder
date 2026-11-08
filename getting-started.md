@@ -40,3 +40,8 @@ Full guidance and sources: `shared/schemas/vibe-coding-support.md`.
 | Never | Ask the user to edit a file, read a stack trace or paste a secret into chat. | None of these appear in the conversation |
 
 More: [Vibe coding](vibe-coding.html).
+
+
+---
+
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.

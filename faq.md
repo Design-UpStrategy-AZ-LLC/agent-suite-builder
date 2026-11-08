@@ -32,9 +32,7 @@ nav_order: 6
 
 **I only want a small one-agent prototype.** Use the Quickstart in `shared/docs/QUICKSTART.md` and skip the full plan.
 
-**Can it improve an agent my team already has?** If you can read its folder (prompts, tools, tests, ideally one logged run): yes, use Raise. You get a scorecard and an upgrade plan. A person then decides whether to Debug or Implement. It does not change code itself. See `shared/examples/support-bot-raise/`.
-
-**What is the difference between Audit and Raise?** Audit is a quick risk check (who can send, who has write access). Raise is the full 14-row scorecard plus an upgrade plan.
+**Can it improve an agent my team already has?** If you can read its folder (prompts, tools, tests, ideally one logged run): yes, use Raise. You get a scorecard and an upgrade plan. A person then decides whether to Debug or Implement. It does not change code itself. See `shared/examples/support-bot-raise/`. Audit is the quicker risk check (who can send, who has write access); Raise is the full 14-row scorecard plus an upgrade plan.
 
 ## Limitations
 
@@ -44,4 +42,9 @@ nav_order: 6
 - A full Scope plan includes online research into each tool's API: allow 1–3 hours for 3–5 connectors.
 - The safety cards are instructions the assistant follows. Nothing in the pack can block a model that ignores them.
 - Raise needs a folder you can read (prompts, tools, tests). It cannot inspect a hosted black box and does not change code.
-- The text is Apache-2.0. The subscription pays for delivery and every new skill and update.
+- Licensed per seat: one subscription per person who uses it. The pack and its docs are copyrighted (DesignUp Strategy AZ LLC, all rights reserved), not open source. The subscription pays for delivery and every new skill and update.
+
+
+---
+
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.

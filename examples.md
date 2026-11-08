@@ -63,3 +63,8 @@ Folder: `shared/examples/task-digest/`
 | Debug | see README (`shared/examples/task-digest/README.md`) |
 | Audit | see README (`shared/examples/task-digest/README.md`) |
 | Raise | see README (`shared/examples/task-digest/README.md`) |
+
+
+---
+
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.

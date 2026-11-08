@@ -140,3 +140,8 @@ Attach to an inspectable existing agent (a folder you can read) and write a lead
 4. Load **only** the schema slice that Fail names. Never the full pattern library.
 5. Two or more Fails → compose card: one Together line per pair (A then B), never a hybrid template.
 6. Write `lead-audit-<date>.md` and `upgrade-plan-<date>.md`. Report-only. Do not apply patches. Pressure: `shared/examples/task-digest/pressure/raise-apply-patches.md`.
+
+
+---
+
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.

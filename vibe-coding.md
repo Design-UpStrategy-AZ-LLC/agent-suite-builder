@@ -152,3 +152,8 @@ Applies to messages, `PROGRESS.md`, `RUNBOOK.md`, `handoff.md` and any buyer-fac
 Ambrose et al., *How Learning Works* · Heath & Heath, *Made to Stick* · Kim & Yegge, *Vibe Coding* · Krug, *Don't Make Me Think* · Lidwell, Holden & Butler, *Universal Principles of Design* · Lim, *Vibe Coding for Beginners* (thin source; its advice to run code without reading it is not adopted) · Maister, *The Trusted Advisor* · Mayer, *Applying the Science of Learning* · Metts & Welfle, *Writing Is Designing* · Nudelman, *UX for AI* · Osmani, *Beyond Vibe Coding* · Ranjan et al., *Agentic AI in Enterprise* · Saffer, *Microinteractions* · Shariat & Saucier, *Tragic Design* · Thaler & Sunstein, *Nudge* · Whalen, *Design for How People Think* · Yablonski, *Laws of UX* · Yifrah, *Microcopy* · *Claude Code — The Definitive Guide*. The plain-writing rules in § 10 come from the maintainer's own editorial standards.
 
 **Known gaps** (no source found; treat the related rules as untested): non-developers building with AI beyond beginner guides; translating system failures for lay readers; teach-back or comprehension checks; over-trust and automation bias in novices; explaining permissions, secrets and billing; accessibility and non-English builders.
+
+
+---
+
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.
