@@ -12,7 +12,7 @@ nav_order: 6
 
 **What do I type first?** In your coding assistant: "Use Agent Suite Builder. Connect Slack, Gmail, and Jira. Give me task updates." You get `blueprint.md`. For something harder, use the insurance-claims prompt in `shared/examples/insurance-claims/README.md`.
 
-**Do I install a plugin?** No. Connect Agensi once (`mcp.agensi.io`) in your coding assistant. It loads the skills from this listing.
+**Do I install a plugin?** No. Unzip the download. In Claude Code, put the `agent-suite-builder` folder in the `.claude/skills` folder in your home folder (every project) or in your project (one project). In Cursor, Codex or another assistant, unzip it into your project and say "Use the Agent Suite Builder pack in the agent-suite-builder folder."
 
 **Will it write code or only documents?** Both, and it runs them. Scope writes the plan. Implement writes framework code with tests and runs the tests itself. Run puts it on a schedule.
 
@@ -38,13 +38,13 @@ nav_order: 6
 
 - It is not a hosted bot. The suite runs where you choose (your computer on a schedule, a CI schedule or your own cloud), on your own accounts, which you connect yourself with the assistant's help.
 - Vibe coding is fully supported up to go-live. For money moving in production, regulated or customer data at volume, or many customers, it recommends a developer review first and writes the handoff file.
-- You need your own AI coding assistant connected to Agensi, and Python (or your language) installed for Implement.
+- You need your own AI coding assistant that loads `SKILL.md` files, and Python (or your language) installed for Implement.
 - A full Scope plan includes online research into each tool's API: allow 1–3 hours for 3–5 connectors.
 - The safety cards are instructions the assistant follows. Nothing in the pack can block a model that ignores them.
 - Raise needs a folder you can read (prompts, tools, tests). It cannot inspect a hosted black box and does not change code.
-- Licensed per seat: one subscription per person who uses it. The pack and its docs are copyrighted (DesignUp Strategy AZ LLC, all rights reserved), not open source. The subscription pays for delivery and every new skill and update.
+- One seat per person who uses it: a one-time purchase on Gumroad, with updates through the buyer's Gumroad library. The pack and its docs are copyrighted (DesignUp Strategy AZ LLC, all rights reserved), not open source.
 
 
 ---
 
-(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed one seat per licence, sold on Gumroad; these pages may be read and linked to, not copied or republished.

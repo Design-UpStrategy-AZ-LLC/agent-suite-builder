@@ -4,9 +4,11 @@ title: "Getting started"
 nav_order: 1
 ---
 
-## 1. Connect Agensi and say what you want
+## 1. Unzip the pack and say what you want
 
-**Try this first.** After subscribing, open your coding assistant in your project and type:
+Unzip the download. In Claude Code, put the `agent-suite-builder` folder in the `.claude/skills` folder in your home folder (every project) or in your project (one project). In Cursor, Codex or another assistant, unzip it into your project and say "Use the Agent Suite Builder pack in the agent-suite-builder folder."
+
+**Try this first.** After unzipping the pack where your assistant can read it, open your coding assistant in your project and type:
 
 > Use Agent Suite Builder. Connect Slack, Gmail, and Jira. Give me task updates.
 
@@ -44,4 +46,4 @@ More: [Vibe coding](vibe-coding.html).
 
 ---
 
-(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed one seat per licence, sold on Gumroad; these pages may be read and linked to, not copied or republished.

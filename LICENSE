@@ -4,15 +4,19 @@ Copyright (c) 2026 DesignUp Strategy AZ LLC. All rights reserved.
 This pack (its skills, reference library, worked examples, scripts, documentation, images and
 video) is proprietary and protected by copyright. It is not open source.
 
-1. License per seat. The pack is licensed, not sold, through the Agensi marketplace (agensi.io).
-   Each paid subscription is one seat: a personal, non-transferable license for one person to use
-   the pack through their own AI agent while the subscription is active, on the Agensi Terms of
-   Service (in particular § 5.2a Subscription Skills and § 8.2 Buyer Licence). Every person who
-   uses the pack needs their own seat.
+1. One seat. The pack is licensed, not sold. It is offered as a download on Gumroad
+   (gumroad.com) for a one-time payment. Each purchase is one seat: a personal,
+   non-exclusive, non-transferable license for one named person to install the pack on computers
+   and AI agents that person controls, and to use it there. Every other person who uses, loads or
+   reads the pack needs their own seat, including colleagues, contractors and clients. A machine,
+   repository or agent workspace that several people can reach counts one seat per person.
 
-2. Not permitted. Copying, saving, exporting, redistributing, reselling, sublicensing, sharing or
-   publishing the pack or any part of it, or using it to build a competing product, except where
-   the Agensi terms or applicable law expressly allow it.
+2. Not permitted. Copying, sending, redistributing, reselling, renting, sublicensing, sharing or
+   publishing the pack or any part of it (including in a public or shared repository, skill or
+   prompt library, course, marketplace or bundle); offering it, or a service that mainly consists
+   of running it, to others as a hosted product; using its files as training, fine-tuning or
+   evaluation data; using it to build a competing product; or removing this notice. Private
+   backup copies of your own seat are allowed.
 
 3. Your own work. Files your agent writes in your own project while you follow the pack (plans,
    code, tests, reports, documentation), including code it adapts from the worked examples for
@@ -22,10 +26,21 @@ video) is proprietary and protected by copyright. It is not open source.
    design-upstrategy-az-llc.github.io/agent-suite-builder is covered by this copyright notice. You
    may read it and link to it. No license to copy, republish or adapt it is granted.
 
-5. Third parties. Names of third-party products and services belong to their owners and are used
-   only to describe compatibility.
+5. Updates. Updates DesignUp Strategy AZ LLC publishes for the pack are covered by this license
+   and reach buyers through their Gumroad library. There is no obligation to publish updates or
+   to provide support.
 
-6. No warranty. Apart from any guarantee Agensi offers, the pack is provided as is, to the extent
-   applicable law allows.
+6. Earlier copies. Seats licensed through the Agensi marketplace (agensi.io) before the pack moved
+   to Gumroad stay under the Agensi Terms of Service (§ 5.2a Subscription Skills, § 8.2 Buyer
+   Licence) for as long as that subscription runs.
 
-Licensing questions: contact DesignUp Strategy AZ LLC through the Agensi listing.
+7. Third parties. Names of third-party products and services belong to their owners and are used
+   only to describe compatibility. Services you connect are governed by their own terms.
+
+8. No warranty. The pack is provided as is, without warranty of any kind, to the extent
+   applicable law allows. Liability is limited to the amount paid for the seat.
+
+9. Termination. This license ends automatically if its terms are broken. You must then stop using
+   the pack and delete every copy.
+
+Licensing questions: contact DesignUp Strategy AZ LLC through the Gumroad product page.

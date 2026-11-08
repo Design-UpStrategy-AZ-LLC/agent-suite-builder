@@ -17,7 +17,7 @@ _For vibe coders and developers building AI agents. Your coding assistant plans,
 
 **What it does not do.** It is not a hosted bot: the suite runs where you choose (your computer on a schedule, a CI schedule, or your cloud), on your own accounts. It connects nothing until you sign in and approve, and nothing sends, pays or files until a named person says yes. For money moving in production, regulated data at volume or many customers, it recommends a developer review and writes the handoff file for one.
 
-**Try this first.** After subscribing, open your coding assistant in your project and type:
+**Try this first.** After unzipping the pack where your assistant can read it, open your coding assistant in your project and type:
 
 > Use Agent Suite Builder. Connect Slack, Gmail, and Jira. Give me task updates.
 
@@ -53,17 +53,17 @@ A one-agent prototype can skip the full plan and use the Quickstart (`shared/doc
   - **Fixing an inherited bot** — an unsafe WhatsApp refund bot: Audit finds the risks, Raise scores it and plans the upgrade, Debug explains a duplicate refund, Implement ships the safe version.
   - **Task digest** — the small read-only starter (Slack, Gmail, Jira).
 
-**What you need.** An AI coding assistant connected to Agensi. For Implement, Python (or your project's language) installed — in vibe mode the assistant sets it up and tells you if anything is missing. A full Scope plan includes online research into what each tool's API really does: allow 1–3 hours for 3–5 connectors.
+**What you need.** An AI coding assistant that loads `SKILL.md` files (Claude Code, Cursor, Codex CLI or similar). For Implement, Python (or your project's language) installed — in vibe mode the assistant sets it up and tells you if anything is missing. A full Scope plan includes online research into what each tool's API really does: allow 1–3 hours for 3–5 connectors.
 
-**Updates and license.** The subscription delivers the pack and every new skill and update. It is licensed per seat: each subscription is a personal license for one person, used through their own agent while the subscription is active. Everyone on a team who uses it needs their own seat. The pack and its documentation are copyrighted by DesignUp Strategy AZ LLC, all rights reserved; they are not open source. What your agent writes in your own project is yours.
+**Updates and license.** One payment buys one seat: a personal license for one person, with every update delivered through the Gumroad library. Everyone on a team who uses it needs their own seat. The pack and its documentation are copyrighted by DesignUp Strategy AZ LLC, all rights reserved; they are not open source. What your agent writes in your own project is yours.
 
 ---
 
 **Start here:** [Getting started](getting-started.html) · [The nine jobs](jobs.html) · [Worked examples](examples.html) · [Vibe coding](vibe-coding.html) · [Cards](cards.html) · [FAQ](faq.html)
 
-The pack itself (skills, reference library and examples) is delivered through Agensi. These pages are generated from it.
+The pack itself (skills, reference library and examples) is sold as a download on Gumroad. These pages are generated from it.
 
 
 ---
 
-(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed per seat through Agensi; these pages may be read and linked to, not copied or republished.
+(c) 2026 DesignUp Strategy AZ LLC. All rights reserved. Agent Suite Builder is licensed one seat per licence, sold on Gumroad; these pages may be read and linked to, not copied or republished.
